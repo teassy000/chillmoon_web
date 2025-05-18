@@ -32,18 +32,19 @@ jobs:
         run: |
           npx @11ty/eleventy \
             --input=src \
-            --output=docs \
+            --output=11ty-site \
             --formats=njk,md,css \
             --pathprefix=/
+          echo "Disable Jekyll" > ../dist/.nojekyll
 
       - name: Validate build output
         run: |
-          [ -f docs/index.html ] || exit 1
-          grep -q "皓魄流霜" docs/index.html
+          [ -f 11ty-site/index.html ] || exit 1
+          grep -q "皓魄流霜" 11ty-site/index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           force_orphan: true  # clear history
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./11ty-site
