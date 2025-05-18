@@ -7,8 +7,12 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions: # 新增权限声明
+      contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false # 禁用默认凭证
 
       - name: Verify file structure
         run: |
@@ -40,5 +44,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./docs
