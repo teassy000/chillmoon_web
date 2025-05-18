@@ -44,6 +44,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          force_orphan: true  # 强制清理历史
+          force_orphan: true  # clear history
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./docs
