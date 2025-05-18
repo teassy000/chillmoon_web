@@ -10,17 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Verify file structure
+        run: |
+          ls -lR src/_includes
+          [ -f src/_includes/base.njk ] || exit 1
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
 
-      - name: Clean install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build site
-        run: npx eleventy --output=docs
+        run: |
+          npx @11ty/eleventy \
+            --input=src \
+            --output=docs \
+            --formats=njk,md,css \
+            --pathprefix=/
+
+      - name: Validate build output
+        run: |
+          [ -f docs/index.html ] || exit 1
+          grep -q "皓魄流霜" docs/index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
