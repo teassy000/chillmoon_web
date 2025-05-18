@@ -35,7 +35,7 @@ jobs:
             --output=11ty-site \
             --formats=njk,md,css \
             --pathprefix=/
-          echo "Disable Jekyll" > ../dist/.nojekyll
+          echo "Disable Jekyll" > ../11ty-site/.nojekyll
 
       - name: Validate build output
         run: |
