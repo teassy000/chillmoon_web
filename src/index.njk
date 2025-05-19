@@ -1,14 +1,23 @@
 ---
-title: "皓魄流霜"
-layout: base.njk
+permalink: /index.html
 ---
 
-<h1 class="glow">{{ title }}</h1>
-<p>专业游戏开发技术解决方案提供商</p>
-
-<section>
-    <h2>最新案例</h2>
-    <div class="gallery">
-        <img src="/assets/demo1.webp" alt="游戏优化案例">
-    </div>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 检测浏览器语言
+        const userLang = navigator.language || navigator.userLanguage;
+        const isChinese = userLang.startsWith('zh');
+        
+        // 设置默认跳转路径
+        window.location.href = isChinese ? '/zh/' : '/en/';
+    </script>
+    
+    <!-- 备用 meta 跳转 -->
+    <meta http-equiv="refresh" content="0; url=/en/" />
+</head>
+<body>
+    <p>Loading... <a href="/en/">English</a> | <a href="/zh/">中文</a></p>
+</body>
+</html>

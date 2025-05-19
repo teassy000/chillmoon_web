@@ -1,0 +1,10 @@
+{
+  "lang": "en",
+  "greeting": "你好世界",
+  "home" : "首页",
+  "company_name" : "皓魄流霜",
+  "switch": "en",
+  "switch_text": "English",
+  "about" : "关于",
+  "about_text" : "这是一个使用 11ty 的网站"
+}

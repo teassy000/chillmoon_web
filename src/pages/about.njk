@@ -1,0 +1,11 @@
+---
+title: "皓魄流霜"
+layout: base.njk
+pagination:
+  data: "languages"
+  size: 1
+  alias: "lang"
+permalink: "{{ lang.code }}/about.html"
+---
+
+<p>{{locales[lang.code].about_text}}</p>

@@ -1,0 +1,10 @@
+{
+  "lang": "en",
+  "greeting": "Hello World",
+  "home" : "Home",
+  "company_name" : "chillmoon",
+  "switch": "zh",
+  "switch_text": "中文",
+  "about" : "About",
+  "about_text" : "This is a site using 11ty"
+}
