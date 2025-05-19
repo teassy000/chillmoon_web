@@ -30,6 +30,7 @@ jobs:
 
       - name: Build site
         run: |
+          BASE_PATH=chillmoon_dev&&\
           npx @11ty/eleventy \
             --input=src \
             --output=11ty-site \

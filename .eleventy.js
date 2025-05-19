@@ -19,11 +19,13 @@ module.exports = async function(eleventyConfig) {
 		// errorMode: "never", // don’t throw errors for missing content
     });
 
+  const basePath = process.env.BASE_PATH || "/";
   return {
-        dir: {
-            input: "src",
-            includes: "_includes",
-            data: "_data",
-        }
+    dir: {
+        input: "src",
+        includes: "_includes",
+        data: "_data",
+    },
+    pathPrefix: basePath
   };
 };
