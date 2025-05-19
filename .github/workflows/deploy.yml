@@ -29,8 +29,9 @@ jobs:
         run: npm ci
 
       - name: Build site
+        env:
+          BASE_PATH: chillmoon_web
         run: |
-          set BASE_PATH=chillmoon_web\
           npx @11ty/eleventy \
             --input=src \
             --output=11ty-site \
