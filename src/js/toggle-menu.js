@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleNav() {
         const isActive = navLinks.classList.toggle('active');
         const blurOverlay = document.getElementById('blur-overlay');
-
+        navToggle.setAttribute('aria-expanded', isActive);
+        
         // 同步模糊层状态
         blurOverlay.style.opacity = isActive ? '1' : '0';
         blurOverlay.style.pointerEvents = isActive ? 'auto' : 'none';
@@ -53,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isNavToggle = navToggle.contains(e.target);
         if (!isNavLink && !isNavToggle) {
             navLinks.classList.remove('active');
-            //navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
     // 监听窗口大小变化
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1000) {
             navLinks.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
 
@@ -74,3 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初始化
     init();
 });
+
+const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+if (isMobile) {
+    document.documentElement.classList.add('mobile');
+}

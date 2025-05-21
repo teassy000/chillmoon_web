@@ -11,20 +11,20 @@
     <div class="backdrop-blur" id="blur-overlay"></div>
 
     <nav>
-        <button class="nav-toggle">☰</button>
+        <div class="nav-logo">{{locales[lang.code].company_name}}</div>
+        <button class="nav-toggle"></button>
         <div class="nav-links">
             <a href="{{"/"              | locale_url | url}}">{{locales[lang.code].home}}</a>
             <a href="{{"/about.html"    | locale_url | url}}">{{locales[lang.code].about}}</a>
             <a href="{{"/contact.html"  | locale_url | url}}">{{locales[lang.code].contact}}</a>
         </div>
+        <!-- 语言切换按钮 -->
         <div class="right-item">
-            <!-- 语言切换按钮 -->
             <a href="{{page.url | locale_url(locales[lang.code].switch) | url}}" class="lang-switch">
                 {{ locales[lang.code].switch_text }}
             </a>
         </div>
     </nav>
-
     {{ content | safe }}
 </body>
 </html>
