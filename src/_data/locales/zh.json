@@ -4,7 +4,9 @@
   "home" : "首页",
   "company_name" : "皓魄流霜",
   "switch": "en",
-  "switch_text": "English",
+  "switch_text": "中/EN",
   "about" : "关于",
-  "about_text" : "这是一个使用 11ty 的网站"
+  "about_text" : "这是一个使用 11ty 的网站",
+  "contact" : "联系",
+  "contact_text" : "如果你有任何疑问或想要咨询的内容，请通过以下方式联系我们。"
 }

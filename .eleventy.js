@@ -1,6 +1,9 @@
 module.exports = async function(eleventyConfig) {
-	const { I18nPlugin } = await import("@11ty/eleventy");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/_data/fonts");
+  eleventyConfig.addPassthroughCopy("src/js");
 
+	const { I18nPlugin } = await import("@11ty/eleventy");
 	eleventyConfig.addPlugin(I18nPlugin, {
         defaultLanguage: "zh",
         locales: ["en", "zh"],

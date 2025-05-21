@@ -2,41 +2,29 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <link rel="preload" href="{{'/_data/fonts/SmileySans-Oblique.ttf.woff2' | url}}" as="font" type="font/woff2"crossorigin>
+    <script src="{{'/js/toggle-menu.js' | url}}"></script>
     <title>{{ title }}</title>
-    <style>
-        :root { --primary: #00F3FF; }
-        body { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        .glow { text-shadow: 0 0 10px var(--primary); }
-        .lang-switch {
-            position: fixed;
-            right: 20px;
-            top: 15px;
-            z-index: 1000;
-            padding: 8px 15px;
-            border-radius: 4px;
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-            text-decoration: none;
-            color: #333;
-            transition: all 3s;
-        }
-        
-        ang-switch:hover {
-            background: #e0e0e0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
 </head>
 <body>
-    <nav>
-        <a href="{{"/" | locale_url | url}}">{{locales[lang.code].home}}</a> | 
-        <a href="{{"/about.html" | locale_url | url}}">{{locales[lang.code].about}}</a>
-    </nav>
-    <!-- 语言切换按钮 -->
+    <div class="backdrop-blur" id="blur-overlay"></div>
 
-    <a href="{{page.url | locale_url(locales[lang.code].switch) | url}}" class="lang-switch">
-      {{ locales[lang.code].switch_text }}
-    </a>
+    <nav>
+        <button class="nav-toggle">☰</button>
+        <div class="nav-links">
+            <a href="{{"/"              | locale_url | url}}">{{locales[lang.code].home}}</a>
+            <a href="{{"/about.html"    | locale_url | url}}">{{locales[lang.code].about}}</a>
+            <a href="{{"/contact.html"  | locale_url | url}}">{{locales[lang.code].contact}}</a>
+        </div>
+        <div class="right-item">
+            <!-- 语言切换按钮 -->
+            <a href="{{page.url | locale_url(locales[lang.code].switch) | url}}" class="lang-switch">
+                {{ locales[lang.code].switch_text }}
+            </a>
+        </div>
+    </nav>
+
     {{ content | safe }}
 </body>
 </html>

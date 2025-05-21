@@ -4,7 +4,9 @@
   "home" : "Home",
   "company_name" : "chillmoon",
   "switch": "zh",
-  "switch_text": "中文",
+  "switch_text": "EN/中",
   "about" : "About",
-  "about_text" : "This is a site using 11ty"
+  "about_text" : "This is a site using 11ty",
+  "contact" : "Contact",
+  "contact_text" : "If you have any questions or inquiries, please contact us through the following methods."
 }
