@@ -49,9 +49,9 @@ jobs:
       - name: Validate build output
         run: |
           [ -f 11ty-site/zh/index.html ] || exit 1
-          [ -f 11ty-site/zh/projects.xml ] || exit 1
+          [ -f 11ty-site/zh/projects.html ] || exit 1
           [ -f 11ty-site/en/index.html ] || exit 1
-          [ -f 11ty-site/en/projects.xml ] || exit 1
+          [ -f 11ty-site/en/projects.html ] || exit 1
           [ -f 11ty-site/.nojekyll ] || exit 1
           
       - name: Deploy
