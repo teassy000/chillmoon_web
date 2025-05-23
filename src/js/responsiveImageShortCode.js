@@ -2,16 +2,17 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 async function responsiveImage(src, alt) {
+    const outputPath = process.env.OUTPUT_PATH || "_site";
     const projectRoot = process.cwd();
-    const imagePath =path.join(projectRoot, "_site", src) 
-    console.log("图片路径为：" + imagePath);
+    const imageSrc =path.join(projectRoot, outputPath, src) 
+    console.log("图片路径为：" + imageSrc);
     
-    const metadata = await Image(imagePath, {
+    const metadata = await Image(imageSrc, {
       widths: [400, 800, 1200],
       formats: ["webp", "jpeg"],
-      outputDir: "./_site/img/",
+      outputDir: outputPath + "/img/",
       urlPath: "/img/",
-      src: imagePath,
+      src: imageSrc,
 
       filenameFormat: (hash, _src, width, format) => {
         

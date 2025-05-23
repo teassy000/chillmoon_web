@@ -3,6 +3,7 @@ const responsiveImage = require("./src/js/responsiveImageShortCode");
 
 module.exports = async function(eleventyConfig) {
   const basePath = process.env.BASE_PATH || "/";
+  const outputPath = process.env.OUTPUT_PATH || "_site";
   
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/_data/fonts");
@@ -31,12 +32,12 @@ module.exports = async function(eleventyConfig) {
 		// errorMode: "never", // don’t throw errors for missing content
     });
 
-  console.log("哈哈哈哈 basePath: " + basePath);
   return {
     dir: {
         input: "src",
         includes: "_includes",
         data: "_data",
+        outputDir: outputPath,
     },
     pathPrefix: basePath
   };

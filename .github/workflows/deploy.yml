@@ -31,12 +31,10 @@ jobs:
       - name: Build site
         env:
           BASE_PATH: chillmoon_web
+          OUTPUT_PATH: 11ty-site
         run: |
           npx @11ty/eleventy \
-            --input=src \
-            --output=11ty-site \
-            --formats=njk,md,css \
-            --pathprefix=/
+            --formats=njk,md,css /
           echo "Disable Jekyll" > ./11ty-site/.nojekyll
 
       - name: Validate build output
