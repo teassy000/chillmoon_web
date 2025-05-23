@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
     const closeBtn = document.querySelector('.close');
   
     gallery.querySelectorAll('.thumbnail').forEach(img => {
       img.addEventListener('click', () => {
         lightbox.style.display = 'block';
         lightboxImg.src = img.dataset.original;
+        caption.textContent = img.alt;
         console.log("点击了缩略图，原始链接为：" + img.dataset.original);
       });
     });

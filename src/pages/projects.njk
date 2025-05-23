@@ -8,19 +8,21 @@ pagination:
 permalink: "{{ lang.code }}/projects.html"
 ---
 
-<div class="gallery-container">
-  {% responsiveImage "/img/00_leapfrog.jpg", "" %}
-  {% responsiveImage "/img/01_mortalkombat.jpg", "" %}
-  {% responsiveImage "/img/02_acezio.jpg", "" %}
-  {% responsiveImage "/img/03_tc2.jpg", "" %}
-  {% responsiveImage "/img/04_tcm.jpg", "" %}
-  {% responsiveImage "/img/05_trials.jpg", "" %}
-  {% responsiveImage "/img/06_tc2.jpg", "" %}
-</div>
+<p>{{locales[lang.code].projects_text}}</p>
 
+<div class="gallery-container">
+  {% responsiveImage "/img/06_tc2.jpg", locales[lang.code].project_name_6 %}
+  {% responsiveImage "/img/05_trials.jpg", locales[lang.code].project_name_5 %}
+  {% responsiveImage "/img/04_tcm.jpg", locales[lang.code].project_name_4 %}
+  {% responsiveImage "/img/03_tc2.jpg", locales[lang.code].project_name_3 %}
+  {% responsiveImage "/img/02_acezio.jpg", locales[lang.code].project_name_2 %}
+  {% responsiveImage "/img/01_mortalkombat.jpg", locales[lang.code].project_name_1 %}  
+  {% responsiveImage "/img/00_leapfrog.jpg", locales[lang.code].project_name_0 %}
+</div>
 
 <div id="lightbox" class="lightbox">
   <span class="close">&times;</span>
   <img class="lightbox-content" id="lightbox-img">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
 </div>
 

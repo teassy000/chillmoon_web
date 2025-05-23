@@ -10,5 +10,12 @@
   "contact" : "Contact",
   "contact_text" : "If you have any questions or inquiries, please contact us through the following methods.",
   "projects" : "Projects",
-  "projects_text" : "The following are the game projects we have participated in and released:"
+  "projects_text" : "The following are the game projects we have participated in and released:",
+  "project_name_0": "LeapTV Sports",
+  "project_name_1": "Mortal Kombat (Androd Porting)",
+  "project_name_2": "Assassin's Creed: The Ezio Collection (PS4/XBOX1 Porting)",
+  "project_name_3": "The Crew 2",
+  "project_name_4": "The Crew: Motorfest",
+  "project_name_5": "Trials: Rising",
+  "project_name_6": "The Division 2"
 }
