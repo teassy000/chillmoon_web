@@ -5,6 +5,10 @@ const { format } = require("@11ty/eleventy-img/src/adapters/sharp");
 module.exports = async function(eleventyConfig) {
   const basePath = process.env.BASE_PATH || "/";
   const outputPath = process.env.OUTPUT_PATH || "_site";
+
+  console.log("当前基础路径为：" + basePath);
+  console.log("当前输出路径为：" + outputPath);
+  console.log("当前环境变量为：" + JSON.stringify(process.env));
   
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/_data/fonts");
@@ -37,7 +41,7 @@ module.exports = async function(eleventyConfig) {
         input: "src",
         includes: "_includes",
         data: "_data",
-        outputDir: outputPath,
+        output: outputPath,
         formats: ["css", "md", "njk"],
     },
     pathPrefix: basePath
