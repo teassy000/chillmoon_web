@@ -13,6 +13,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/_data/fonts");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/img");
 
   // 导入图片处理插件
   eleventyConfig.addAsyncShortcode("responsiveImage", responsiveImage);
