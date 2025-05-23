@@ -28,12 +28,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Show Pathes
+        run: |
+          echo "pwd: ===== "
+          pwd
+          echo "tree: ===== "
+          tree -d
+          echo "ls -l: ===== "
+          ls -l
+          
+        
       - name: Build site
         env:
           BASE_PATH: chillmoon_web
           OUTPUT_PATH: 11ty-site
         run: |
-          ls
           npx @11ty/eleventy
           echo "Disable Jekyll" > ./11ty-site/.nojekyll
 
