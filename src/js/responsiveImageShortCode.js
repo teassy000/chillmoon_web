@@ -8,15 +8,15 @@ async function responsiveImage(src, alt) {
     console.log("源图片路径为：" + imageSrc);
     
     const outputPath = process.env.OUTPUT_PATH || "_site";
+    const basePath = process.env.BASE_PATH || "/";
     const metadata = await Image(imageSrc, {
       widths: [400, 800, 1200],
       formats: ["webp", "jpeg"],
       outputDir: outputPath + "/img/",
-      urlPath: "/img/",
+      urlPath: "/" + basePath + "/img/",
       src: imageSrc,
 
       filenameFormat: (hash, _src, width, format) => {
-        
         const ext = path.extname(_src);
         const name = path.basename(_src, ext);
         console.log("格式化后: " + `${name}-${width}w.${format}`);
@@ -24,9 +24,9 @@ async function responsiveImage(src, alt) {
       }
     });
 
-    const originalUrl = metadata.jpeg[metadata.jpeg.length - 1].url;
 
-    const basePath = process.env.BASE_PATH || "/";
+
+    const originalUrl = metadata.jpeg[metadata.jpeg.length - 1].url;
     const fixedSrc = '/' + path.join(basePath, originalUrl.replace(/\\/g, "/"));
     console.log("生成图片链接为：" + fixedSrc);
 
