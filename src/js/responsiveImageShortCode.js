@@ -27,7 +27,7 @@ async function responsiveImage(src, alt) {
     const originalUrl = metadata.jpeg[metadata.jpeg.length - 1].url;
 
     const basePath = process.env.BASE_PATH || "/";
-    const fixedSrc = path.join( basePath, originalUrl.replace(/\\/g, "/"));
+    const fixedSrc = '/' + path.join(basePath, originalUrl.replace(/\\/g, "/"));
     console.log("生成图片链接为：" + fixedSrc);
 
     return `<div class="gallery-item">
