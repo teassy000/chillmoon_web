@@ -1,5 +1,6 @@
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const responsiveImage = require("./src/js/responsiveImageShortCode");
+const { format } = require("@11ty/eleventy-img/src/adapters/sharp");
 
 module.exports = async function(eleventyConfig) {
   const basePath = process.env.BASE_PATH || "/";
@@ -38,6 +39,7 @@ module.exports = async function(eleventyConfig) {
         includes: "_includes",
         data: "_data",
         outputDir: outputPath,
+        formats: ["css", "md", "njk"],
     },
     pathPrefix: basePath
   };
