@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // 同步模糊层状态
         blurOverlay.style.opacity = isActive ? '1' : '0';
         blurOverlay.style.pointerEvents = isActive ? 'auto' : 'none';
+
+        // 禁用滚动
+        document.body.style.overflow = isActive ? 'hidden' : '';
+
     }
 
     // 点击按钮切换

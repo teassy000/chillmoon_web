@@ -1,7 +1,16 @@
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const responsiveImage = require("./src/js/responsiveImageShortCode");
+
 module.exports = async function(eleventyConfig) {
+  const basePath = process.env.BASE_PATH || "/";
+  
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/_data/fonts");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/img/**/*");
+
+  // 导入图片处理插件
+  eleventyConfig.addAsyncShortcode("responsiveImage", responsiveImage);
 
 	const { I18nPlugin } = await import("@11ty/eleventy");
 	eleventyConfig.addPlugin(I18nPlugin, {
@@ -22,7 +31,7 @@ module.exports = async function(eleventyConfig) {
 		// errorMode: "never", // don’t throw errors for missing content
     });
 
-  const basePath = process.env.BASE_PATH || "/";
+  console.log("哈哈哈哈 basePath: " + basePath);
   return {
     dir: {
         input: "src",

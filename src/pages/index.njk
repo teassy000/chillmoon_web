@@ -1,5 +1,5 @@
 ---
-title: "皓魄流霜"
+title: "Chillmoon Studio"
 layout: base.njk
 pagination:
   data: "languages"
@@ -8,7 +8,5 @@ pagination:
 permalink: "{{ lang.code }}/index.html"
 ---
 
-<section>
-    <h2 class="glow">{{locales[lang.code].company_name}}</h2>
-    <p>{{locales[lang.code].greeting}}</p>
-</section>
+
+{{content | safe}}

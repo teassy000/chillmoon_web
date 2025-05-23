@@ -8,5 +8,7 @@
   "about" : "About",
   "about_text" : "This is a site using 11ty",
   "contact" : "Contact",
-  "contact_text" : "If you have any questions or inquiries, please contact us through the following methods."
+  "contact_text" : "If you have any questions or inquiries, please contact us through the following methods.",
+  "projects" : "Projects",
+  "projects_text" : "The following are the game projects we have participated in and released:"
 }

@@ -1,0 +1,11 @@
+{% extends "base.njk" %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ '/css/gallery.css' | url }}">
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/js/gallery.js"></script>
+{% endblock %}

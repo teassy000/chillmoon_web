@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    {% block styles %}{% endblock %}  <!-- 新增样式扩展点 -->
     <link rel="preload" href="{{'/_data/fonts/SmileySans-Oblique.ttf.woff2' | url}}" as="font" type="font/woff2"crossorigin>
-    <script src="{{'/js/toggle-menu.js' | url}}"></script>
+
     <title>{{ title }}</title>
 </head>
 <body>
     <div class="backdrop-blur" id="blur-overlay"></div>
-
     <nav>
         <div class="nav-logo">{{locales[lang.code].company_name}}</div>
         <button class="nav-toggle"></button>
@@ -17,6 +17,7 @@
             <a href="{{"/"              | locale_url | url}}">{{locales[lang.code].home}}</a>
             <a href="{{"/about.html"    | locale_url | url}}">{{locales[lang.code].about}}</a>
             <a href="{{"/contact.html"  | locale_url | url}}">{{locales[lang.code].contact}}</a>
+            <a href="{{"/projects.html"  | locale_url | url}}">{{locales[lang.code].projects}}</a>
         </div>
         <!-- 语言切换按钮 -->
         <div class="right-item">
@@ -26,5 +27,8 @@
         </div>
     </nav>
     {{ content | safe }}
+
+    <script src="{{'/js/toggle-menu.js' | url}}"></script>
+    {% block scripts %}{% endblock %}  <!-- 新增脚本扩展点 -->
 </body>
 </html>
