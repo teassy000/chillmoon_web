@@ -33,6 +33,7 @@ jobs:
           BASE_PATH: chillmoon_web
           OUTPUT_PATH: 11ty-site
         run: |
+          ls
           npx @11ty/eleventy
           echo "Disable Jekyll" > ./11ty-site/.nojekyll
 
