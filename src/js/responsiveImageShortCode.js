@@ -4,7 +4,7 @@ const path = require("path");
 async function responsiveImage(src, alt) {
     const outputPath = process.env.OUTPUT_PATH || "_site";
     const projectRoot = process.cwd();
-    const imageSrc =path.join(projectRoot, outputPath, src) 
+    const imageSrc =path.join(projectRoot, 'src', src) 
     console.log("图片路径为：" + imageSrc);
     
     const metadata = await Image(imageSrc, {
