@@ -2,11 +2,12 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 async function responsiveImage(src, alt) {
-    const outputPath = process.env.OUTPUT_PATH || "_site";
+
     const projectRoot = process.cwd();
     const imageSrc =path.join(projectRoot, 'src', src) 
-    console.log("图片路径为：" + imageSrc);
+    console.log("源图片路径为：" + imageSrc);
     
+    const outputPath = process.env.OUTPUT_PATH || "_site";
     const metadata = await Image(imageSrc, {
       widths: [400, 800, 1200],
       formats: ["webp", "jpeg"],
@@ -25,6 +26,7 @@ async function responsiveImage(src, alt) {
 
     const originalUrl = metadata.jpeg[metadata.jpeg.length - 1].url;
     const fixedSrc = originalUrl.replace(/\\/g, "/");
+    console.log("生成图片链接为：" + fixedSrc);
 
     return `<div class="gallery-item">
       ${Image.generateHTML(metadata, {
