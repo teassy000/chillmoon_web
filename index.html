@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 检测浏览器语言
+        const userLang = navigator.language || navigator.userLanguage;
+        const isChinese = userLang.startsWith('zh');
+        // 设置默认跳转路径
+        window.location.href = pathPrefix + (isChinese ? '/zh/' : '/en/') + '/';
+    </script>
+    
+    <!-- 备用 meta 跳转 -->
+    <meta http-equiv="refresh" content="0; url=/en/" />
+</head>
+<body>
+    <p>Loading... </p>
+</body>
+</html>
