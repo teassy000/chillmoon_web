@@ -40,7 +40,7 @@ jobs:
         
       - name: Build site
         env:
-          BASE_PATH: chillmoon_web
+          BASE_PATH: .
           OUTPUT_PATH: 11ty-site
         run: |
           npx @11ty/eleventy
